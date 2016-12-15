@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Description;
+using WeatherForcastApi.Hubs;
 using WeatherForcastApi.Models;
 
 namespace WeatherForcastApi.Controllers
 {
     [EnableCors("*","*","GET,POST,PUT")]
-    public class TemperaturesApiController : ApiController
+    public class TemperaturesApiController : ApiControllerWithHub<TemperatureHub>
     {
         private TemperatureEntitiesEntities db = new TemperatureEntitiesEntities();
 
@@ -58,6 +59,8 @@ namespace WeatherForcastApi.Controllers
             try
             {
                 await db.SaveChangesAsync();
+                Hub.Clients.All.receiveTemperature(temperature);
+
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -85,6 +88,7 @@ namespace WeatherForcastApi.Controllers
             }
 
             db.Temperatures.Add(temperature);
+
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = temperature.Id }, temperature);
