@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Thines\Documents\Visual Studio 2015\Projects\WeatherForcastApi\WeatherForcastApi\Models\TemperatureDB.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Thines\Desktop\WeatherForcastApi\WeatherForcastApi\Models\TemperatureDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

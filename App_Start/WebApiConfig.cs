@@ -8,7 +8,7 @@ namespace WeatherForcastApi
         public static void Register(HttpConfiguration config)
         {
 
-            EnableCorsAttribute cors = new EnableCorsAttribute("*","*","GET,POST,PUT");
+            EnableCorsAttribute cors = new EnableCorsAttribute("*", "*","GET,POST,PUT");
             config.EnableCors(cors);
             config.MapHttpAttributeRoutes();
 

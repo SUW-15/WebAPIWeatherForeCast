@@ -11,7 +11,7 @@ using WeatherForcastApi.Models;
 
 namespace WeatherForcastApi.Controllers
 {
-    [EnableCors("*","*","GET,POST,PUT")]
+    [EnableCors("*", "*","GET,POST,PUT")]
     public class TemperaturesApiController : ApiControllerWithHub<TemperatureHub>
     {
         private TemperatureEntitiesEntities db = new TemperatureEntitiesEntities();

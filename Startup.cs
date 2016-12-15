@@ -22,7 +22,8 @@ namespace WeatherForcastApi
                  map.UseCors(CorsOptions.AllowAll);
                  var hubConfiguration = new HubConfiguration
                  {
-                     EnableJSONP = true
+                     EnableJSONP = true,
+                     EnableJavaScriptProxies = true
                  };
 
                  map.RunSignalR(hubConfiguration);
